@@ -13,6 +13,9 @@ def cipher(string, shift)
 	#Keep spaces as spaces rather than being shifted
 		if letter.ord == 32
 			print " "
+	#Account for punctuation
+		elsif letter.ord.between?(33,47)
+			print letter 				
 	#For A-Z loop from Z to A
 		elsif ((letter.ord + shift).between?(91,96))
 				print (letter.ord-26+shift).chr
@@ -24,7 +27,9 @@ def cipher(string, shift)
 			print (letter.ord+shift).chr
 		end
 	end
+	#messy but makes the output clearer! 
+	puts "\n"
 end
 
 cipher("What a string!", 5)
-=>"Bmfy f xywnsl!"
+# =>"Bmfy f xywnsl!"
