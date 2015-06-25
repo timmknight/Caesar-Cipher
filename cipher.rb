@@ -31,5 +31,5 @@ def cipher(string, shift)
 	puts "\n"
 end
 
-cipher("What a string!", 5)
+cipher("What a string!:", 5)
 # =>"Bmfy f xywnsl!"
