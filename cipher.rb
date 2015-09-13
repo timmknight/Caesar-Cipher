@@ -11,11 +11,8 @@ def cipher(string, shift)
 	string.each_char do |letter|	
 
 	#Keep spaces as spaces rather than being shifted
-		if letter.ord == 32
-			print " "
-	#Account for punctuation
-		elsif letter.ord.between?(33,47)
-			print letter 				
+		if letter.ord.between?(32,64)
+			print letter				
 	#For A-Z loop from Z to A
 		elsif ((letter.ord + shift).between?(91,96))
 				print (letter.ord-26+shift).chr
@@ -31,5 +28,5 @@ def cipher(string, shift)
 	puts "\n"
 end
 
-cipher("What a string!:", 5)
+cipher("What a string!", 5)
 # =>"Bmfy f xywnsl!"
